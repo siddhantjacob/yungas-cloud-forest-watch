@@ -30,8 +30,8 @@ Three questions, using only publicly available landscape data:
 
 - **Environmental Context (PCA):** PC1 and PC2 together account for **96.9%** of variance (PC1: 64.6%, PC2: 32.3%) across elevation, mean temperature, and annual precipitation. The Yungas background forms a tight environmental subset near the edge of the historical *Leopardus tigrinus* complex envelope ($n=918$).
 - **Cloud Visibility:** Across 94,283 1km grid cells evaluated between 2021 and 2025, optical satellites (Sentinel-2) obtained clear ground observations only **32.1%** of the time on average.
-- **Monitoring Coverage vs. Forest Loss:** Out of 27,193 1km grid cells that experienced **any detected forest loss** (>0 loss fraction, representing 41.1% of the study belt), **34.9% (9,478 cells)** occurred under below-median satellite visibility (< 0.34 clear fraction). 
-- **Descriptive Association:** Spearman rank correlation between clear-observation fraction and forest loss fraction was **$\rho = 0.253$**, evaluated on an asymmetric 2x2 matrix (visibility median split $\times$ loss presence/absence split).
+- **Monitoring Coverage vs. Forest Loss (2021–2025):** Out of 32,919 1km grid cells that experienced **any detected forest loss** (>0 loss fraction, representing 48.9% of the study belt), **38.0% (12,503 cells)** occurred under below-median satellite visibility (< 0.34 clear fraction). 
+- **Descriptive Association:** Spearman rank correlation between clear-observation fraction and forest loss fraction was **$\rho = 0.219$**, evaluated on an asymmetric 2x2 matrix (visibility median split $\times$ loss presence/absence split).
 
 ## Data sources
 
@@ -39,10 +39,10 @@ Three questions, using only publicly available landscape data:
 |---|---|---|
 | Tiger-cat-complex occurrences | GBIF (`data/raw/tigrinus_occurrences.csv`, gitignored -- not in this repo) | Environmental-space comparison |
 | Ecoregion boundary | RESOLVE Ecoregions 2017 (`RESOLVE/ECOREGIONS/2017`) | Study-area definition |
-| Elevation | Copernicus GLO-30 DEM (`COPERNICUS/DEM/GLO30_2024_1`) | Study-area filter + PCA feature |
-| Forest cover / loss | Hansen Global Forest Change v1.11 (`UMD/hansen/global_forest_change_2023_v1_11`) | Study-area filter + loss analysis |
+| Elevation | Copernicus GLO-30 DEM (`COPERNICUS/DEM/GLO30`) | Study-area filter + PCA feature |
+| Forest cover / loss | Hansen Global Forest Change v1.13 (`UMD/hansen/global_forest_change_2025_v1_13`) | Study-area filter + loss analysis |
 | Temperature / precipitation | WorldClim v1 BIO (`WORLDCLIM/V1/BIO`) | PCA features |
-| Cloud/clear observations | Sentinel-2 SR Harmonized (`COPERNICUS/S2_SR_HARMONIZED`) | Visibility analysis |
+| Cloud/clear observations | Sentinel-2 SR Harmonized (`COPERNICUS/S2_SR_HARMONIZED`) | Visibility analysis || Visibility analysis |
 
 All datasets are public and were accessed via Google Earth Engine and the GBIF API. No paid or restricted-access data was used.
 
