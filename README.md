@@ -30,7 +30,8 @@ Three questions, using only publicly available landscape data:
 
 - **Environmental Context (PCA):** PC1 and PC2 together account for **96.9%** of variance (PC1: 64.6%, PC2: 32.3%) across elevation, mean temperature, and annual precipitation. The Yungas background forms a tight environmental subset near the edge of the historical *Leopardus tigrinus* complex envelope ($n=918$).
 - **Cloud Visibility:** Across 94,283 1km grid cells evaluated between 2021 and 2025, optical satellites (Sentinel-2) obtained clear ground observations only **32.1%** of the time on average.
-- **Monitoring Blind Spots:** Out of 27,193 1km grid cells that experienced recent forest loss (41.1% of the study belt), **34.9% (9,478 cells)** occurred under below-median satellite visibility (< 0.34 clear fraction). Spearman rank correlation between clear-observation fraction and forest loss fraction was **$\rho = 0.253$**, reported descriptively because neighbouring grid cells are spatially correlated.
+- **Monitoring Coverage vs. Forest Loss:** Out of 27,193 1km grid cells that experienced **any detected forest loss** (>0 loss fraction, representing 41.1% of the study belt), **34.9% (9,478 cells)** occurred under below-median satellite visibility (< 0.34 clear fraction). 
+- **Descriptive Association:** Spearman rank correlation between clear-observation fraction and forest loss fraction was **$\rho = 0.253$**, evaluated on an asymmetric 2x2 matrix (visibility median split $\times$ loss presence/absence split).
 
 ## Data sources
 
@@ -52,8 +53,9 @@ Run `scripts/01` through `scripts/07` in order in your Python environment; each 
 ## Limitations
 
 - The study-area boundary (elevation 500-3500m, $\ge$30% forest cover within the Bolivian Yungas ecoregion) is a reasonable analytical choice, not an official habitat or protected-area boundary.
-- The PCA-env-inspired comparison uses historical tiger-cat-complex records, not confirmed *L. tilcayo* records, because none are public. It describes how unusual the Yungas environment is relative to that broader group's historical range -- it is not a niche model for the new species.
-- Forest-loss totals here should not be compared to official Global Forest Watch figures for the region, since the study boundary differs from any official administrative or ecoregion polygon GFW reports on.
+- The PCA-env comparison uses historical tiger-cat-complex records, not confirmed *L. tilcayo* records, because none are public. It describes how unusual the Yungas environment is relative to that broader group's historical range — it is not a niche model for the new species.
+- **Detection Artifact in Forest Loss Data:** The weak positive correlation ($\rho = 0.253$) may partly reflect a detection limitation of the source data — persistently cloudy cells offer fewer clear observations for Hansen's algorithm to register change against — rather than a purely ecological or human activity pattern.
+- **Grid Loss Threshold:** A grid cell classified as having "loss" indicates $\ge 1$ cleared pixel within that 1km² cell (~11,000 pixels total), reflecting presence of loss rather than widespread deforestation across the entire cell.
 
 ## License
 
