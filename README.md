@@ -30,7 +30,7 @@ Three questions, using only publicly available landscape data:
 
 - **Environmental Context (PCA):** PC1 and PC2 together account for **96.9%** of variance (PC1: 64.6%, PC2: 32.3%) across elevation, mean temperature, and annual precipitation. The Yungas background forms a tight environmental subset near the edge of the historical *Leopardus tigrinus* complex envelope ($n=918$).
 - **Cloud Visibility:** Across 94,283 1km grid cells evaluated between 2021 and 2025, optical satellites (Sentinel-2) obtained clear ground observations only **32.1%** of the time on average.
-- **Monitoring Blind Spots:** Exactly **50.0% of analyzed 1km grid cells** (33,049 of 66,104 cells) fall into the **poor visibility, high loss** quadrant. Spearman rank correlation between clear-observation fraction and forest loss fraction was **$\rho = 0.253$**, reported descriptively because neighbouring grid cells are spatially correlated.
+- **Monitoring Blind Spots:** Out of 27,193 1km grid cells that experienced recent forest loss (41.1% of the study belt), **34.9% (9,478 cells)** occurred under below-median satellite visibility (< 0.34 clear fraction). Spearman rank correlation between clear-observation fraction and forest loss fraction was **$\rho = 0.253$**, reported descriptively because neighbouring grid cells are spatially correlated.
 
 ## Data sources
 
