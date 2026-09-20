@@ -57,11 +57,12 @@ colors = {
     "poor_visibility__no_loss": "#9BB7D4",
     "poor_visibility__has_loss": "#D64545",  # monitoring blind spot
 }
+
 labels = {
     "good_visibility__no_loss": "Good visibility, no loss",
-    "good_visibility__has_loss": "Good visibility, forest loss",
+    "good_visibility__has_loss": "Good visibility, any detected loss",
     "poor_visibility__no_loss": "Poor visibility, no loss",
-    "poor_visibility__has_loss": "MONITORING BLIND SPOT (poor visibility, forest loss)",
+    "poor_visibility__has_loss": "POOR VISIBILITY, ANY DETECTED LOSS (34.9% of loss cells)",
 }
 
 fig, ax = plt.subplots(figsize=(8, 7))
@@ -79,9 +80,8 @@ ax.set_xlabel("Clear-observation fraction, 2021–2025 (Sentinel-2)")
 ax.set_ylabel("Forest-loss fraction, 2021–2025 (Hansen GFC)")
 ax.set_title(
     f"Yungas monitoring coverage vs. forest loss (n={len(df)} cells)\n"
-    f"Spearman rho = {rho:.3f} (descriptive, spatially correlated data)"
+    f"Spearman rho = {rho:.3f} (Visibility Median x Presence/Absence Split)"
 )
 ax.legend(loc="upper right", fontsize=8, framealpha=0.9)
 plt.tight_layout()
 plt.savefig("figures/figure3_monitoring_blindspot.png", dpi=300)
-print("\nSaved figures/figure3_monitoring_blindspot.png")
